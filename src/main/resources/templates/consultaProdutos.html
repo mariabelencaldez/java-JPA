@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<meta charset="UTF-8">
+
+	<title>maria belen caldez</title>
+</head>
+
+<main>
+	<nav>
+		<div class="nav-wrapper">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
+				<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+
+
+		<h1>Consulta<h1>
+				<div class="row">
+					<div class="col s12">
+						<table class="striped highlight centered">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Produto</th>
+									<th>Preco</th>
+									<th>Estoque</th>
+									<th>Ações</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="produtos: ${produtos}">
+									<td th:text="*{produtos.id}" />
+									<td th:text="*{produtos.nome}" />
+									<td th:text="*{produtos.preco}" />
+									<td th:text="*{produtos.estoque}" />
+									<td>
+										<a th:href="@{'/consultaProdutos/' + ${produtos.id}}">Editar</a>
+
+										<a th:href="@{'/deleteProdutos/' + ${produtos.id}}">Excluir</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<a th:href="@{/cadastroProdutos}">Cadastro</a>
+					</div>
+				</div>
+
+	</div>
+</main>
+
+<style>
+
+</style>
+</body>
+
+</html>

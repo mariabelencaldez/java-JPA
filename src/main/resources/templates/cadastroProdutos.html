@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#00838F">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<title>maria belen caldez</title>
+</head>
+
+	<main>
+	<div class="container">
+		<h1>Cadastro<h1>
+			<form th:action="@{cadastroProdutos}" method="post">
+				<label for="idnome">Nome</label>
+				<input id="idnome" type="text" placeholder="Informe nome" name="nome" />
+
+				<label for="idpreco">Preco</label>
+				<input id="idpreco" type="text" placeholder="Informe o preço" name="preco" />
+
+				<label for="idestoque">Estoque</label>
+				<input id="idestoque" type="text" placeholder="Informe quantidade" name="estoque" />
+
+				<button>Salvar</button>
+	</div>
+	</main>
+
+</body>
+
+</html>
