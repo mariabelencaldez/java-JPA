@@ -3,42 +3,42 @@
 
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="theme-color" content="#00838F">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/app.css">
 	<title>maria belen caldez</title>
 </head>
 
 <body>
-
-	<main>
-	
 	<nav>
-		<div class="nav-wrapper">
+		<div class="nav-wrapper red">
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
 				<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
 			</ul>
 		</div>
 	</nav>
-	
-	<div class="container">
-		<h1>Cadastro<h1>
+	<main>
+
+
+		<div class="container">
+
+			<h3 class="tituloPadrao red-text col s12">
+				<i class="medium material-icons">input</i>
+				Cadastro de Produto
+			</h3>
 			<form th:action="@{cadastroProdutos}" method="post">
 				<label for="idnome">Nome</label>
-				<input id="idnome" type="text" placeholder="Informe nome" name="nome" required/>
+				<input id="idnome" type="text" placeholder="Informe nome" name="nome" required />
 
 				<label for="idpreco">Preco</label>
-				<input id="idpreco" type="text" placeholder="Informe o preço" name="preco" required/>
+				<input id="idpreco" type="text" placeholder="Informe o preço" name="preco" required />
 
 				<label for="idestoque">Estoque</label>
-				<input id="idestoque" type="text" placeholder="Informe quantidade" name="estoque" required/>
+				<input id="idestoque" type="text" placeholder="Informe quantidade" name="estoque" required />
+				
+				<a class="waves-effect waves-light btn red"><i class="material-icons left">save</i>Salvar</a>
 
-				<button>Salvar</button>
-	</div>
+		</div>
 	</main>
 
 </body>

@@ -12,26 +12,39 @@
 	<title>maria belen caldez</title>
 </head>
 
-<main>
-	<div class="container">
-		<h1>Editar<h1>
-				<form th:action="@{/cadastroProdutos}" method="post" th:object="${produto}">
-					<label for="idnome">ID</label>
-					<input id="idnome" type="text" th:field="*{id}" readonly />
-
-					<label for="idnome">Nome</label>
-					<input id="idnome" type="text" th:field="*{nome}" />
-
-					<label for="idpreco">Preco</label>
-					<input id="idpreco" type="text" th:field="*{preco}" />
-
-					<label for="idestoque">estoque</label>
-					<input id="idestoque" type="text" th:field="*{estoque}" />
-					<button>Salvar</button>
-
-	</div>
+<body>
+	<nav>
+		<div class="nav-wrapper red">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
+				<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
+			</ul>
+		</div>
+	</nav>
 	<main>
+		<div class="container">
 
-		</body>
+			<h3 class="tituloPadrao red-text col s12">
+				<i class="medium material-icons">edit</i>
+				Edição de Produto
+			</h3>
+			<form th:action="@{/cadastroProdutos}" method="post" th:object="${produto}">
+				<label for="idnome">ID</label>
+				<input id="idnome" type="text" th:field="*{id}" readonly />
+
+				<label for="idnome">Nome</label>
+				<input id="idnome" type="text" th:field="*{nome}" />
+
+				<label for="idpreco">Preco</label>
+				<input id="idpreco" type="text" th:field="*{preco}" />
+
+				<label for="idestoque">estoque</label>
+				<input id="idestoque" type="text" th:field="*{estoque}" />
+				<a class="waves-effect waves-light btn red"><i class="material-icons left">save</i>Salvar</a>
+
+		</div>
+		<main>
+
+</body>
 
 </html>
