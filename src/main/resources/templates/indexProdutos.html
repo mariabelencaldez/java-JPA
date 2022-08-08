@@ -13,20 +13,24 @@
 </head>
 
 <body>
+	<nav>
+		<div class="nav-wrapper red">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
+				<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
+			</ul>
+		</div>
+	</nav>
 	<main>
-	
-	  <nav>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
-        <li><a th:href="@{/consultaProdutos}">Consulta</a></li>
-      </ul>
-    </div>
-  </nav>
-	<div class="container">
-	
-	
-	<h1>Index<h1>
+
+
+		<div class="container">
+
+
+			<h1 class="tituloPadrao red-text col s12">
+				<i class="medium material-icons">local_grocery_store</i>
+				
+			</h1>
 	</main>
 
 </body>
