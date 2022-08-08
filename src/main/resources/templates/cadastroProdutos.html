@@ -12,18 +12,30 @@
 	<title>maria belen caldez</title>
 </head>
 
+<body>
+
 	<main>
+	
+	<nav>
+		<div class="nav-wrapper">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
+				<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
+			</ul>
+		</div>
+	</nav>
+	
 	<div class="container">
 		<h1>Cadastro<h1>
 			<form th:action="@{cadastroProdutos}" method="post">
 				<label for="idnome">Nome</label>
-				<input id="idnome" type="text" placeholder="Informe nome" name="nome" />
+				<input id="idnome" type="text" placeholder="Informe nome" name="nome" required/>
 
 				<label for="idpreco">Preco</label>
-				<input id="idpreco" type="text" placeholder="Informe o preço" name="preco" />
+				<input id="idpreco" type="text" placeholder="Informe o preço" name="preco" required/>
 
 				<label for="idestoque">Estoque</label>
-				<input id="idestoque" type="text" placeholder="Informe quantidade" name="estoque" />
+				<input id="idestoque" type="text" placeholder="Informe quantidade" name="estoque" required/>
 
 				<button>Salvar</button>
 	</div>

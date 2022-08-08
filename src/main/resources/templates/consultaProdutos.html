@@ -1,62 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 
+
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<meta charset="UTF-8">
-
+	<meta name="theme-color" content="#00838F">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
 	<title>maria belen caldez</title>
 </head>
 
-<main>
-	<nav>
-		<div class="nav-wrapper">
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
-				<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
-			</ul>
-		</div>
-	</nav>
-	<div class="container">
-
-
-		<h1>Consulta<h1>
-				<div class="row">
-					<div class="col s12">
-						<table class="striped highlight centered">
-							<thead>
-								<tr>
-									<th>Id</th>
-									<th>Produto</th>
-									<th>Preco</th>
-									<th>Estoque</th>
-									<th>Ações</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="produtos: ${produtos}">
-									<td th:text="*{produtos.id}" />
-									<td th:text="*{produtos.nome}" />
-									<td th:text="*{produtos.preco}" />
-									<td th:text="*{produtos.estoque}" />
-									<td>
-										<a th:href="@{'/consultaProdutos/' + ${produtos.id}}">Editar</a>
-
-										<a th:href="@{'/deleteProdutos/' + ${produtos.id}}">Excluir</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<a th:href="@{/cadastroProdutos}">Cadastro</a>
-					</div>
-				</div>
-
+<nav>
+	<div class="nav-wrapper red">
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a th:href="@{/cadastroProdutos}">Cadastro</a></li>
+			<li><a th:href="@{/consultaProdutos}">Consulta</a></li>
+		</ul>
 	</div>
-</main>
+</nav>
 
-<style>
+<body>
+	<main>
+		<div class="container">
 
-</style>
+
+			<h3 class="tituloPadrao red-text col s12">
+				<i class="medium material-icons">assignment</i>
+				Consuta de Produtos
+			</h3>
+			<div class="row">
+
+				<table class="striped highlight centered responsive-table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Produto</th>
+							<th>Preco</th>
+							<th>Estoque</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="produtos: ${produtos}">
+							<td th:text="*{produtos.id}" />
+							<td th:text="*{produtos.nome}" />
+							<td th:text="*{produtos.preco}" />
+							<td th:text="*{produtos.estoque}" />
+							<td>
+								<a class="medium material-icons red-text" th:href="@{'/consultaProdutos/' + ${produtos.id}}">edit</a>
+
+								<a class="medium material-icons red-text" th:href="@{'/deleteProdutos/' + ${produtos.id}}">delete</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+
+		</div>
+	</main>
+
+	<style>
+		table {
+			color: rgb(255, 0, 0);
+			background: rgb(252, 190, 160);
+			border: 1px solid rgb(255, 255, 241);
+			font-size: 14pt;
+			border-collapse: collapse;
+			width: 80vw;
+			margin: 3em auto;
+		}
+
+		table a {
+			text-decoration: underline;
+		}
+
+		table td a::hover {
+			font-style: italic;
+		}
+
+		table thead th,
+		table tfoot th {
+			color: rgb(255, 255, 255);
+			background: rgb(255, 128, 64);
+		}
+
+		table th,
+		table td {
+			padding: .7em;
+			border: 2px solid rgb(255, 255, 241);
+		}
+	</style>
+
+
 </body>
 
 </html>
